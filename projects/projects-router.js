@@ -33,4 +33,40 @@ router.get('/:projectId/actions', async (req, res) => {
     }
 })
 
+router.post('/', (req, res) => {
+    const project = req.body;
+    if (!req.body.name || !req.body.description) {
+        res.status(400).json({ errorMessage: "Please provide name and description for the project." })
+    } else {
+        Projects
+        .insert(project)
+        .then( response => res.status(200).json(response))
+        .catch( err => res.status(500).json({errorMessage:"Could not post project."}))
+    }
+})
+
+router.put('/:id', (req, res) => {
+    const changes = req.body;
+    const id = req.params.id;
+    if (!req.body.name || !req.body.description) {
+        res.status(400).json({ errorMessage: "Please provide name and description for the project." })
+    } else {
+        Projects
+        .update(id, changes)
+        .then( response => res.status(200).json(response))
+        .catch( err => res.status(500).json({errorMessage:"Could not post project."}))
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const deleted = await Projects.remove(id);
+        res.status(204).json(deleted)
+    } 
+    catch {
+        res.status(500).json({errorMessage:"Could not post project."})
+    }
+})
+
 module.exports = router;
