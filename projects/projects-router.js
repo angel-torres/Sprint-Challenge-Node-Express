@@ -65,7 +65,7 @@ router.delete('/:id', async (req, res) => {
         res.status(204).json(deleted)
     } 
     catch {
-        res.status(500).json({errorMessage:"Could not post project."})
+        res.status(500).json({errorMessage:"Could not delete project."})
     }
 })
 
