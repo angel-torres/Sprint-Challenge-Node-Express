@@ -1,0 +1,29 @@
+{
+  "name": "webapi-blog",
+  "version": "1.0.0",
+  "description": "Web API Blog Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angel-torres/Sprint-Challenge-Node-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angel-torres/Sprint-Challenge-Node-Express/issues"
+  },
+  "homepage": "https://github.com/angel-torres/Sprint-Challenge-Node-Express#readme"
+}
